@@ -2,6 +2,10 @@
     <div id="app">
         <Header @search="performSearch" />
 
+        <main>
+          <CardList :list="movieList" />
+        </main>
+
 
       
     </div>
@@ -10,12 +14,15 @@
 <script>
 import axios from 'axios';
 import Header from "@/components/Header.vue";
+import CardList from "@/components/CardList.vue";
 
 export default {
   name: 'App',
   components: {
       Header,
+      CardList,
   },
+
   data() {
       return {
         movieList: [],
