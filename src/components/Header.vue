@@ -2,7 +2,7 @@
     <header>
         <input type="text" placeholder="Search a movie" v-model="searchText" />
 
-        <button>Search</button>
+        <button @click="$emit('search', searchText)">Search</button>
     </header>
 </template>
 
