@@ -18,7 +18,11 @@
                 <span v-else>{{ language }}</span>
             </li>
             <li>voto: {{ vote }}</li>
-            <li ><i :key="index" v-for="index in (Math.round(vote / 2))" class="fas fa-star"></i></li>
+            <li>
+                <i :key="index" v-for="index in (Math.round(vote / 2))" class="fas fa-star"></i>
+                <i :key="index" v-for="index in 5 - (Math.round(vote / 2))" class="far fa-star"></i>
+            </li>
+            
             
         </ul>
     </div>
