@@ -4,10 +4,10 @@
 
         <main>
           <CardList :list="movieList" />
+
+          <CardList :list="tvList" />
         </main>
 
-
-      
     </div>
 </template>
 
@@ -26,6 +26,7 @@ export default {
   data() {
       return {
         movieList: [],
+        tvList: [],
       }
   },
 
@@ -34,24 +35,51 @@ export default {
       console.log(searchText);
 
       if (searchText !== '') {
-        
-          axios.get('https://api.themoviedb.org/3/search/movie', {
-              params: {
+
+          const apiParams = {
                 api_key: '2115a7432b175478adeded346c457451',                          
                 query: searchText,
                 language: 'it-IT',
-              }
-          })
-          .then(result => {
+          }
+
+          // MOVIES
+          axios
+
+            .get('https://api.themoviedb.org/3/search/movie', {
+
+              params: apiParams,
+
+            })
+
+            .then(result => {
               this.movieList = result.data.results
-          })
-          .catch(err => console.log(err))
+            })
+
+            .catch(err => console.log(err))
+
+
+          // SERIE TV
+          axios
+
+            .get('https://api.themoviedb.org/3/search/tv', {
+
+              params: apiParams,
+
+            })
+
+            .then(result => {
+              this.tvList = result.data.results
+            })
+
+            .catch(err => console.log(err))
+
       }
 
     },
 
   },
-}
+
+};
 </script>
 
 <style lang="scss">
