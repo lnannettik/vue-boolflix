@@ -1,6 +1,6 @@
 <template>
 
-    <div class="card">
+    <div class="crd">
         <img 
             :src="`https://image.tmdb.org/t/p/w342${poster}`" 
             :alt="title"
@@ -18,6 +18,8 @@
                 <span v-else>{{ language }}</span>
             </li>
             <li>voto: {{ vote }}</li>
+            <li ><i :key="index" v-for="index in (Math.round(vote / 2))" class="fas fa-star"></i></li>
+            
         </ul>
     </div>
 
@@ -41,17 +43,21 @@ export default {
     computed: {
         isFlag() {
             return this.availableFlags.includes(this.language);
-        }
+        },
     }
 
 }
 </script>
 
 <style scoped lang="scss">
-    .card {
-        .flag img {
+    .crd {
+        .flag {
             width: 30px;
         }
+    }
+
+    li i {
+        color: black;
     }
     
 
