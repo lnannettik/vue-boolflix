@@ -1,12 +1,8 @@
 <template>
     <div id="app">
         <Header @search="performSearch" />
-
-        <main>
-          <CardList :list="movieList" />
-
-          <CardList :list="tvList" />
-        </main>
+        <Main :Array1="movieList"
+              :Array2="tvList"/>
 
     </div>
 </template>
@@ -14,13 +10,13 @@
 <script>
 import axios from 'axios';
 import Header from "@/components/Header.vue";
-import CardList from "@/components/CardList.vue";
+import Main from '@/components/Main.vue'
 
 export default {
   name: 'App',
   components: {
       Header,
-      CardList,
+      Main,
   },
 
   data() {
@@ -83,4 +79,5 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/styles/global.scss';
 </style>

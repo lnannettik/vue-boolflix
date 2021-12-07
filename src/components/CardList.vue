@@ -5,6 +5,7 @@
                 :title="item.title ? item.title : item.name"
                 :originalTitle="item.original_title ? item.original_title : item.original_name"
                 :language="item.original_language"
+                :overview="item.overview"
                 :vote="item.vote_average"
                 :poster="item.poster_path"
             />

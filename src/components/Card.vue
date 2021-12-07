@@ -1,30 +1,38 @@
 <template>
 
-    <div class="crd">
+    <div class="crd" >
         <img 
-            :src="`https://image.tmdb.org/t/p/w342${poster}`" 
+            v-if="poster !== null"
+            :src="`https://image.tmdb.org/t/p/w185${poster}`" 
             :alt="title"
         />
-        <ul>
-            <li>Titolo: {{ title }}</li>
-            <li>Titolo Originale: {{ originalTitle }}</li>
-            <li>
-                Lingua: 
-                <img class="flag"
-                v-if="isFlag" 
-                :src="require(`../assets/${language}.png`)" 
-                :alt="language"
-                >
-                <span v-else>{{ language }}</span>
-            </li>
-            <li>voto: {{ vote }}</li>
-            <li>
-                <i :key="index" v-for="index in (Math.round(vote / 2))" class="fas fa-star"></i>
-                <i :key="index" v-for="index in 5 - (Math.round(vote / 2))" class="far fa-star"></i>
-            </li>
-            
-            
-        </ul>
+
+        <span v-else>immagine non disponibile</span>
+       
+        <div class="crd-contenuto">
+            <ul>
+                <li class="title">{{ title }}</li>
+                <li>Titolo Originale: {{ originalTitle }}</li>
+                <li>{{ overview }}</li>
+                <!-- <li>
+                    Lingua: 
+                    <img class="flag"
+                    v-if="isFlag" 
+                    :src="require(`../assets/${language}.png`)" 
+                    :alt="language"
+                    >
+                    <span v-else>{{ language }}</span>
+                </li> -->
+                <li>voto: {{ vote }}</li>
+                <li>
+                    <i :key="`star-${index}`" v-for="(el, index) in (Math.round(vote / 2))" class="fas fa-star"></i>
+                    <i :key="`empty-star-${index}`" v-for="(el, index) in 5 - (Math.round(vote / 2))" class="far fa-star"></i>
+                </li>
+                                
+            </ul>
+        </div>
+
+
     </div>
 
 </template>
@@ -54,15 +62,71 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
     .crd {
+        width: 185px;
+        border-radius: 10px;
+        font-size: 10px;
+        margin: 40px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 500ms ease;
+        background-color: black;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:hover .crd-contenuto {
+            padding-top: 10px;
+            height: 100%;
+            top: 0;
+        }
+        
+        img {
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .crd-contenuto {
+            // height: 60%;
+            width: 100%;
+            background: linear-gradient(
+                        hsl(0 0% 0% / 1),
+                        hsl(20 0% 0% / 0.3) 30%,
+                        hsl(0 0% 0% / 0)
+                        );
+            position: absolute;    
+            padding-top: 10px;
+            z-index: 2;
+            left: 0;
+            top: 85%;
+            transition: top 500ms ease;
+
+        }
+
         .flag {
-            width: 30px;
+            width: 8px;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: -20px;
+
+            .title {
+                margin-bottom: 10px;
+                font-size: 1.5em;
+                color: white;
+
+            }
         }
     }
 
-    li i {
-        color: black;
-    }
     
+
+    li {
+        color:white;
+    }
+
 
 </style>
