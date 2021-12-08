@@ -13,7 +13,8 @@
             <ul>
                 <li class="title">{{ title }}</li>
                 <li>Titolo Originale: {{ originalTitle }}</li>
-                <li>{{ overview }}</li>
+                <li v-if="poster !== null">{{ overview }}</li>
+
                 <!-- <li>
                     Lingua: 
                     <img class="flag"
@@ -44,6 +45,7 @@ export default {
         poster: String,
         title: String,
         originalTitle: String,
+        overview: String,
         language: String,
         vote: Number,
     },
@@ -64,7 +66,7 @@ export default {
 <style scoped lang="scss">
 
     .crd {
-        width: 185px;
+        // width: 185px;
         border-radius: 10px;
         font-size: 10px;
         margin: 40px;
@@ -93,10 +95,12 @@ export default {
             width: 100%;
             background: linear-gradient(
                         hsl(0 0% 0% / 1),
-                        hsl(20 0% 0% / 0.3) 30%,
+                        hsl(20 0% 0% / 0.3) 90%,
                         hsl(0 0% 0% / 0)
                         );
-            position: absolute;    
+            position: absolute;
+            padding-right: 5%;
+
             padding-top: 10px;
             z-index: 2;
             left: 0;
@@ -126,6 +130,7 @@ export default {
 
     li {
         color:white;
+        margin-bottom: 10px;
     }
 
 

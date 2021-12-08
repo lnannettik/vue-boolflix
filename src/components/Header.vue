@@ -3,8 +3,8 @@
 
         <div class="top">
 
-            <div class="sec left">
-                <div class="link">
+            <div class="sec left">BOOLFLIX
+                <!-- <div class="link">
                     <a href="">Home</a>
                 </div>
                 
@@ -18,11 +18,10 @@
                 
                 <div class="link">
                     <a href="">Coming Soon</a>
-                </div>
+                </div> -->
                 
             </div>
 
-            <div class="sec center">BOOLFLIX</div>
 
             <div class="sec right">
 
@@ -57,6 +56,7 @@ export default {
 <style scoped lang="scss">
 
     header {
+        height: 60px;
         background-color: #262f37;
         display: flex;
         justify-content: space-evenly;
@@ -64,33 +64,32 @@ export default {
         position: fixed;
 
         .top {
+            height: 60px;
             width: 70%;
-            height: 90px;
             display: flex;
             background-color: #262f37;
             align-items: center;
 
-            a {
-                text-decoration: none;
-                color: lightgrey;
-                font-weight: 700;
-                
-
-            }
+            // a {
+            //     text-decoration: none;
+            //     color: lightgrey;
+            //     font-weight: 700;
+            //     font-size: 0.8rem;
+            // }
 
             .sec {
                 display: flex;
                 justify-content: center;
                 color: lightgrey;
-                width: 33%;
+                width: 50%;
             }
 
             .left {
                 display: flex;
+                width: 20%;
+                background-color: #1e262d;
 
-                .link {
-                    margin-right: 2vw;
-                }
+
             }
 
             input {
@@ -101,10 +100,13 @@ export default {
                 border-bottom-width: medium;
                 border-bottom: 1px solid;
                 color: lightgrey;
+                font-size: 0.8rem;
             }
 
-
-            
+            .button {
+                font-size: 0.8rem;
+            }
+ 
         }
     }
 

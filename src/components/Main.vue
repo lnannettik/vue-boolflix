@@ -90,13 +90,14 @@ export default {
 
 <style scoped lang="scss">
     .section {
-        padding-top: 90px;
+        padding-top: 60px;
         display: flex;
         height: 100vh;
         width: 70%;
         margin: 0 auto;
         color: grey;
         font-weight: 700;
+        font-size: 0.8rem;
 
         main {
             padding: 40px;
@@ -127,6 +128,10 @@ export default {
                     .filter {
                         text-decoration: none;
                         color: lightgrey;
+
+                        a {
+                            font-size: 0.8rem;
+                        }
                     }
 
                 }
@@ -139,8 +144,6 @@ export default {
 
         .years {
             width: 100%;
-            // border: 1px solid black;
-
         }
 
         .years ul {
@@ -149,7 +152,7 @@ export default {
             display: flex;
             flex-wrap: wrap;
             padding: 1rem;
-            margin: 20px 0;
+            margin-top: 20px;
 
             li {
                 background-color: lightgrey;
