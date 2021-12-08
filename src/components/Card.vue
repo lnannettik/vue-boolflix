@@ -100,11 +100,10 @@ export default {
                         );
             position: absolute;
             padding-right: 5%;
-
             padding-top: 10px;
             z-index: 2;
             left: 0;
-            top: 85%;
+            top: 100%;
             transition: top 500ms ease;
 
         }

@@ -92,8 +92,9 @@ export default {
     .section {
         padding-top: 60px;
         display: flex;
+        justify-content: center;
         height: 100vh;
-        width: 70%;
+        // width: 80%;
         margin: 0 auto;
         color: grey;
         font-weight: 700;
@@ -137,7 +138,7 @@ export default {
                 }
 
         .main {
-            background-color: #171d22;
+            // background-color: #171d22;
             display: flex;
             overflow: auto;
         }
