@@ -5,35 +5,21 @@
 
             <div class="sec left">
                 <img src="https://fontmeme.com/permalink/211208/6bcb0c41d7009b6fd82ae769632e5a03.png" alt="netflix-font" border="0">
-                <!-- <div class="link">
-                    <a href="">Home</a>
-                </div>
-                
-                <div class="link">
-                    <a href="">Film A - Z</a>
-                </div>
-                
-                <div class="link">
-                    <a href="">Serie TV</a>
-                </div>
-                
-                <div class="link">
-                    <a href="">Coming Soon</a>
-                </div> -->
-                
             </div>
 
 
-            <div class="sec right">
+            <div class="sec right col-3 col-mg-6 col-lg-6">
 
                 <div class="search-container">
 
                     <input 
+                    class="input"
                     type="text" 
-                    placeholder="Search a movie" 
+                    placeholder="Search a movie or series..." 
                     v-model.trim="searchText"
                     @keyup.enter="$emit('search', searchText)"
                     />
+
 
                     <button class="button" @click="$emit('search', searchText)"><i class="fas fa-search"></i></button>
 
@@ -65,6 +51,7 @@ export default {
         width: 100%;
         position: fixed;
         z-index: 3;
+        margin-top: 2rem;
 
 
         .top {
@@ -73,13 +60,6 @@ export default {
             align-items: center;
             justify-content: space-between;
 
-            // a {
-            //     text-decoration: none;
-            //     color: lightgrey;
-            //     font-weight: 700;
-            //     font-size: 0.8rem;
-            // }
-
             .sec {
                 display: flex;
                 color: lightgrey;
@@ -87,11 +67,10 @@ export default {
 
             .left {
                 display: flex;
-                background-color: #1e262d;
+                margin-left: 5%;
 
                 img {
-                    width: 20%;
-
+                    width: 80%; 
                     margin: 20px;
                 }
 
@@ -100,21 +79,47 @@ export default {
             .right {
                 display: flex;
                 justify-content: flex-end;
-            }
+                margin-right: 10%;
 
-            input {
-                background: transparent;
-                border: none;
-                border-bottom-color: currentcolor;
-                border-bottom-style: none;
-                border-bottom-width: medium;
-                border-bottom: 1px solid;
-                color: lightgrey;
-                font-size: 0.8rem;
-            }
+                .search-container {
+                    display: flex;
+                    width: 0;
+                    justify-content: end;
+                    transition: width 500ms ease;
+                    border-radius: 40px;
+                    padding: 10px 30px;                    
 
-            .button {
-                font-size: 0.8rem;
+                    &:hover,
+                    &:focus {
+                        background: #171d22;
+                        width: 100%;
+
+                    }
+
+                    .input {
+                        width: 100%;
+                        border: none;
+                        color: lightgrey;
+                        font-size: 0.7rem;
+                        font-weight: 700;
+                        background: #171d22;
+                        border-radius: 20px;
+                        
+                    }
+
+                    .button {
+                        font-size: 0.8rem;
+                        font-size: xx-large;
+                        background: transparent;
+                        border: none;
+                        color: lightgray;
+                        margin-left: 20px;
+                        z-index: 4;
+
+                    
+                    }
+
+                }
             }
  
         }

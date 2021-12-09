@@ -1,14 +1,10 @@
 <template>
-    <aside class="aside">
-        CONTENT
 
-
-
-    </aside>
 </template>
 
 <script>
 export default {
+    name: 'Contenitore',
 
 }
 </script>

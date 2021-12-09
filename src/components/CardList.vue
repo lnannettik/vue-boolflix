@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="section">
         <div class="col" v-for="item in list" :key="item.id">
             <Card
                 :title="item.title ? item.title : item.name"
@@ -21,11 +21,8 @@
 import Card from "@/components/Card.vue";
 
 export default {
-  components: { Card },
     name: 'CardList',
-    component: {
-        Card
-    },
+    components: { Card },
     props: {
         list: Array,
     },
@@ -33,6 +30,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+
+    .section {
+        display: flex;
+
+    }
 
 </style>

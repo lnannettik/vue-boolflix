@@ -1,38 +1,37 @@
 <template>
 
     <section class="section">    
-        <aside class="aside">NAVIGA
+        <aside class="aside">
+
+            <span class="naviga">NAVIGA</span>
+            
             <ul class="filter-list">
                 <li class="filter-container">
-                    <a class="filter" href="#">Home</a>
+                    <a class="filter" href="#"><i class="fas fa-home"></i> Home</a>
                 </li>
 
                 <li class="filter-container">
-                    <a class="filter" href="#">Film</a>
+                    <a class="filter" href="#"><i class="fas fa-video"></i> Film</a>
                 </li>
                 
                 <li class="filter-container">
-                    <a class="filter" href="#">Serie TV</a>
+                    <a class="filter" href="#"><i class="fas fa-tv"></i> Serie TV</a>
+                </li>
+                                
+                <li class="filter-container">
+                    <a class="filter" href="#"><i class="fas fa-dragon"></i> Anime</a>
                 </li>
                 
                 <li class="filter-container">
-                    <a class="filter" href="#">TV Show</a>
+                    <a class="filter" href="#"><i class="fab fa-hotjar"></i> Popolari</a>
                 </li>
                 
                 <li class="filter-container">
-                    <a class="filter" href="#">Anime</a>
+                    <a class="filter" href="#"><i class="fas fa-star"></i> I più Votati</a>
                 </li>
                 
                 <li class="filter-container">
-                    <a class="filter" href="#">Popolari</a>
-                </li>
-                
-                <li class="filter-container">
-                    <a class="filter" href="#">I più Votati</a>
-                </li>
-                
-                <li class="filter-container">
-                    <a class="filter" href="#">Film A-Z</a>
+                    <a class="filter" href="#"><i class="fas fa-list"></i> Film A-Z</a>
                 </li>
                                 
             </ul>
@@ -94,7 +93,6 @@ export default {
         display: flex;
         justify-content: center;
         height: 100vh;
-        // width: 80%;
         margin: 0 auto;
         color: grey;
         font-weight: 700;
@@ -102,18 +100,21 @@ export default {
 
         main {
             padding: 40px;
+            display: flex;
         }
 
         .aside {
-            background-color: #1e262d;
             width: 20%;
             padding: 20px;
+            margin: 90px 0 0 5%;
         }
 
             .filter-list {
                 margin: 20px 0 50px -25px;
                 list-style: none;
-            }
+                height: max-content;
+                overflow: hidden;
+                }
 
                 .filter-container {
                     padding: 8px;
@@ -133,12 +134,15 @@ export default {
                         a {
                             font-size: 0.8rem;
                         }
+
+                        i {
+                            margin-right: 10px;
+                        }
                     }
 
                 }
 
         .main {
-            // background-color: #171d22;
             display: flex;
             overflow: auto;
         }
@@ -153,16 +157,18 @@ export default {
             display: flex;
             flex-wrap: wrap;
             padding: 1rem;
-            margin-top: 20px;
+            margin-top: 15px;
 
             li {
                 background-color: lightgrey;
                 width: 31%;
                 margin: 2px auto;
                 text-align: center;
+                padding: 2px 0 1px 0;
 
                 &:hover {
                     background-color :transparent;
+                    color: lightgray
                 }
 
             }
